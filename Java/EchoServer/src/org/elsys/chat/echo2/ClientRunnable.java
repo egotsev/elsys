@@ -20,8 +20,10 @@ public class ClientRunnable implements Runnable {
 	public void run() {
 		System.out.println("Accepted connection from client: " + client);
 
-		try (BufferedReader in = new BufferedReader(new InputStreamReader(client.getInputStream()));
-				PrintWriter out = new PrintWriter(client.getOutputStream(), true);) {
+		try (
+			PrintWriter out = new PrintWriter(client.getOutputStream(), true);
+			BufferedReader in = new BufferedReader(new InputStreamReader(client.getInputStream()));
+		) {
 			// waits for data and reads it in until connection dies
 			// readLine() blocks until the server receives a new
 			// line
@@ -34,6 +36,7 @@ public class ClientRunnable implements Runnable {
 				}
 				out.println(s);
 			}
+			client.close();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
