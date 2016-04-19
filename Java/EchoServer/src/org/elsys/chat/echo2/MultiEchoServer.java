@@ -2,7 +2,6 @@ package org.elsys.chat.echo2;
 
 import java.io.IOException;
 import java.net.ServerSocket;
-import java.net.Socket;
 
 public class MultiEchoServer extends Thread {
 
@@ -23,12 +22,9 @@ public class MultiEchoServer extends Thread {
 
 			// repeatedly wait for connections, and process
 			while (!closing) {
-
 				// a "blocking" call which waits until a connection is requested
-				try (Socket clientSocket = serverSocket.accept()) {
-					ClientRunnable clientRunnable = new ClientRunnable(clientSocket, this);
-					new Thread(clientRunnable).start();
-				}
+				ClientRunnable clientRunnable = new ClientRunnable(serverSocket.accept(), this);
+				new Thread(clientRunnable).start();
 			}
 		} catch (IOException e) {
 			e.printStackTrace();

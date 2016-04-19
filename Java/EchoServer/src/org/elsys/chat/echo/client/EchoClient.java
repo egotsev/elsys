@@ -7,7 +7,7 @@ import java.net.Socket;
 import java.net.UnknownHostException;
 import java.util.Scanner;
 
-public class Client extends Thread {
+public class EchoClient extends Thread {
 
 	private static final String TEXT = "the text sent to server";
 	private static final String HOST = "localhost";
@@ -17,8 +17,7 @@ public class Client extends Thread {
 	public void run() {
 		try (Socket echoSocket = new Socket(HOST, PORT);
 				OutputStream outStream = echoSocket.getOutputStream();
-				InputStream inStream = echoSocket.getInputStream();
-				Scanner consoleScanner = new Scanner(System.in);) {
+				InputStream inStream = echoSocket.getInputStream();) {
 
 			outStream.write(TEXT.getBytes());
 			outStream.flush();
@@ -35,7 +34,7 @@ public class Client extends Thread {
 	}
 	
 	public static void main(String[] args) {
-		Client client = new Client();
+		EchoClient client = new EchoClient();
 		client.start();
 	}
 	
