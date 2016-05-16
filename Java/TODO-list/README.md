@@ -6,7 +6,7 @@
 ```
 TODO    | Do OOP homework              | Low    | school, programming
 TODO    | Get 8 hours of sleep.        | Low    | health
-CURRENT | Party hard.                  | Normal | social
+DOING   | Party hard.                  | Normal | social
 DONE    | Netflix and chill.           | Normal | tv shows
 TODO    | Find missing socks.          | Low    | meh
 ```
