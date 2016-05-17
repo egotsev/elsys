@@ -11,7 +11,7 @@ public interface TodoList {
 	 * @param input
 	 * @return new instance of TodoList
 	 */
-	static TodoList parse(String input) {
+	public static TodoList parse(String input) {
 		return new TodoListImpl(input);
 	}
 

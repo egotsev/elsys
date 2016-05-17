@@ -3,7 +3,7 @@ package org.elsys.todo.impl;
 import org.elsys.todo.Criteria;
 import org.elsys.todo.Task;
 
-abstract class AbstractCriteria implements Criteria {
+public abstract class AbstractCriteria implements Criteria {
 
 	@Override
 	public Criteria and(Criteria other) {
@@ -21,7 +21,6 @@ abstract class AbstractCriteria implements Criteria {
 	public Criteria not() {
 		return new NotCriteria(this);
 	}
-
-	abstract boolean matches(Task task);
 	
+	abstract boolean matches(Task task);
 }

@@ -17,3 +17,4 @@ class NotCriteria extends AbstractCriteria implements Criteria {
 	}
 
 }
+

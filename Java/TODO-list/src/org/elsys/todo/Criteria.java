@@ -1,5 +1,6 @@
 package org.elsys.todo;
 
+import org.elsys.todo.impl.PriorityCriteria;
 import org.elsys.todo.impl.StatusCriteria;
 
 /**
@@ -26,8 +27,7 @@ public interface Criteria {
 	 * @return the new Criteria instance
 	 */
 	public static Criteria priority(Priority priority) {
-		// TODO implement me
-		return null;
+		return new PriorityCriteria(priority);
 	}
 
 	/**
