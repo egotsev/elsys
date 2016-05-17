@@ -2,6 +2,8 @@ package org.elsys.todo;
 
 import java.util.List;
 
+import org.elsys.todo.impl.TodoListImpl;
+
 public interface TodoList {
 
 	/**
@@ -9,9 +11,8 @@ public interface TodoList {
 	 * @param input
 	 * @return new instance of TodoList
 	 */
-	static TodoList parse(String input) {
-		// TODO implement me!
-		return null;
+	public static TodoList parse(String input) {
+		return new TodoListImpl(input);
 	}
 
 	/**

@@ -1,5 +1,8 @@
 package org.elsys.todo;
 
+import org.elsys.todo.impl.PriorityCriteria;
+import org.elsys.todo.impl.StatusCriteria;
+
 /**
  * Interface used for filtering {@link TodoList}s.
  */
@@ -12,9 +15,8 @@ public interface Criteria {
 	 * @param status
 	 * @return the new Criteria instance
 	 */
-	static Criteria status(Status status) {
-		// TODO implement me
-		return null;
+	public static Criteria status(Status status) {
+		return new StatusCriteria(status);
 	}
 
 	/**
@@ -24,9 +26,8 @@ public interface Criteria {
 	 * @param priority
 	 * @return the new Criteria instance
 	 */
-	static Criteria priority(Priority priority) {
-		// TODO implement me
-		return null;
+	public static Criteria priority(Priority priority) {
+		return new PriorityCriteria(priority);
 	}
 
 	/**
@@ -36,7 +37,7 @@ public interface Criteria {
 	 * @param tags
 	 * @return the new Criteria instance
 	 */
-	static Criteria tags(String[] tags) {
+	public static Criteria tags(String[] tags) {
 		// TODO implement me
 		return null;
 	}
